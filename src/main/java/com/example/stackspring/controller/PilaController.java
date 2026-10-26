@@ -13,6 +13,7 @@ import java.util.Stack;
 @RestController
 @RequestMapping("/pila")
 public class PilaController {
+    private Stack<String> pila = new Stack<>();
 
     @PostMapping
     public String agregar(@RequestParam String valor) {
