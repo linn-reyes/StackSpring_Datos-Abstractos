@@ -39,7 +39,6 @@ public class PilaController {
         if (pila.isEmpty()) {
             return "La pila esta vacia";
         }
-        return "Se puede ver: " + pila.peek();
+        return "Lo que esta en la pila es: " + pila.peek();
     }
 }
-
