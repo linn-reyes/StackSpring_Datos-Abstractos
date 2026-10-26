@@ -17,19 +17,29 @@ public class PilaController {
 
     @PostMapping
     public String agregar(@RequestParam String valor) {
-
+        pila.push(valor);
         return "Se agrego: " + valor;
     }
 
     @GetMapping("/pop")
     public String sacar() {
-
-        return "La pila esta vacia";
+        if (pila.isEmpty()) {
+            return "La pila esta vacia";
+        }
+        return "Se saco: " + pila.pop();
     }
 
     @GetMapping
     public List<String> verPila() {
+        return pila;
+    }
 
-        return new ArrayList<>();
+    @GetMapping("/peek")
+    public String verTope() {
+        if (pila.isEmpty()) {
+            return "La pila esta vacia";
+        }
+        return "Se puede ver: " + pila.peek();
     }
 }
+
